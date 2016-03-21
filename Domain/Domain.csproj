@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E780FDD6-C014-4CB7-AE9F-73F298AC8DBC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Domain</RootNamespace>
+    <AssemblyName>Domain</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Collections.Immutable, Version=1.1.37.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Collections.Immutable.1.1.37\lib\portable-net45+win8+wp8+wpa81\System.Collections.Immutable.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\BaseKey.cs" />
+    <Compile Include="Common\RandomNumberGenerator.cs" />
+    <Compile Include="Common\Direction3D.cs" />
+    <Compile Include="DME\Dme.cs" />
+    <Compile Include="DME\DmeBuilder.cs" />
+    <Compile Include="DME\IDme.cs" />
+    <Compile Include="DME\IDmeProvider.cs" />
+    <Compile Include="DesignModel\DesignModel.cs" />
+    <Compile Include="DesignModel\DesignModelBuilder.cs" />
+    <Compile Include="DesignModel\Feature.cs" />
+    <Compile Include="DesignModel\FeatureId.cs" />
+    <Compile Include="DME\ToolSet.cs" />
+    <Compile Include="ProgramGeneration\IMeasurementPointCalculator.cs" />
+    <Compile Include="ProgramGeneration\IToolCoverageCalculator.cs" />
+    <Compile Include="ProgramGeneration\MeasurementPoint.cs" />
+    <Compile Include="ProgramGeneration\MeasurementPoints.cs" />
+    <Compile Include="ProgramGeneration\MeasurementSetNodeResult.cs" />
+    <Compile Include="ProgramGeneration\NodeError.cs" />
+    <Compile Include="ProgramGeneration\NodeInputFactory.cs" />
+    <Compile Include="ProgramGeneration\MeasurementPointCalculator.cs" />
+    <Compile Include="ProgramGeneration\PointError.cs" />
+    <Compile Include="ProgramGeneration\ProgramGenerationExt.cs" />
+    <Compile Include="ProgramGeneration\ProgramGenerationResult.cs" />
+    <Compile Include="Program\ChangeToolNode.cs" />
+    <Compile Include="Program\InterMeasurementSetNode.cs" />
+    <Compile Include="Program\IPath.cs" />
+    <Compile Include="Program\IPathCommand.cs" />
+    <Compile Include="Plan\MeasurementSet.cs" />
+    <Compile Include="Plan\PlanFeature.cs" />
+    <Compile Include="Common\BaseId.cs" />
+    <Compile Include="Plan\MeasurementSetId.cs" />
+    <Compile Include="Plan\PlanFeatureId.cs" />
+    <Compile Include="DME\ITool.cs" />
+    <Compile Include="Program\IProgramNode.cs" />
+    <Compile Include="Program\MovePathCommand.cs" />
+    <Compile Include="Plan\MeasurementSetKey.cs" />
+    <Compile Include="Program\MeasurementSetNode.cs" />
+    <Compile Include="Program\MeasurementPathCommand.cs" />
+    <Compile Include="Program\Path.cs" />
+    <Compile Include="Plan\Plan.cs" />
+    <Compile Include="Program\Program.cs" />
+    <Compile Include="Common\IRandomNumberGenerator.cs" />
+    <Compile Include="ProgramGeneration\MeasurementSetNodeResultGenerator.cs" />
+    <Compile Include="ProgramGeneration\MeasurementSetToolCoverage.cs" />
+    <Compile Include="ProgramGeneration\NodeInput.cs" />
+    <Compile Include="Common\ISimulatedAnnealingStrategy.cs" />
+    <Compile Include="Service\ProgramBuilder.cs" />
+    <Compile Include="Program\ProgramExt.cs" />
+    <Compile Include="Service\PlanBuilder.cs" />
+    <Compile Include="Common\Vector3D.cs" />
+    <Compile Include="Common\Point3D.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="DME\Tool.cs" />
+    <Compile Include="DME\ToolId.cs" />
+    <Compile Include="ProgramGeneration\ToolCoverage.cs" />
+    <Compile Include="ProgramGeneration\ToolCoverageCalculator.cs" />
+    <Compile Include="Common\CommonExt.cs" />
+    <Compile Include="Common\SimulatedAnnealing.cs" />
+    <Compile Include="ProgramGeneration\SimulatedAnnealingProgramStrategy.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
